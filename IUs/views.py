@@ -11,3 +11,8 @@ def index(request, pk):
     print(song, song.pk)
     print(song.album.image)
     return render(request, 'index.html', context = {'song':song, 'album_image':song.album.image})
+
+
+def home(request):
+    album = Album.objects.all()
+    return render(request, 'home.html', context={'albums':album})
