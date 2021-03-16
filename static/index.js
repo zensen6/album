@@ -3,7 +3,7 @@ const body = document.querySelector('body');
 const dotbox = document.querySelector('.dotbox');
 const prevBtn = document.querySelector('.prevBtn');
 const nextBtn = document.querySelector('.nextBtn');
-const header = document.querySelector('.header');
+//const header = document.querySelector('.header');
 
 console.log(12);
 
@@ -57,9 +57,11 @@ function colordot(previndex, index) {
 	dots[index].style.backgroundColor = 'gainsboro';
 }
 
+/*
 header.style.background =
 	'linear-gradient(0deg, rgba(149,149,149,1) 3%, rgba(153,153,153,1) 3%, rgba(255,255,255,1) 100%, rgba(0,0,0,0) 100%)';
 
+	*/
 function sliding(n) {
 	var previndex = index;
 	index = (index + n < 0 ? albumimage.length - 1 : index + n) % albumimage.length;
@@ -81,8 +83,10 @@ function sliding(n) {
 	//homeimgcontainer.appendChild(img);
 	changebackground();
 	colordot(previndex, index);
+	/*
 	header.style.background =
 		'linear-gradient(0deg, rgba(149,149,149,1) 3%, rgba(153,153,153,1) 3%, rgba(255,255,255,1) 100%, rgba(0,0,0,0) 100%)';
+	*/
 }
 
 homeimgcontainer.addEventListener('click', function(e) {
@@ -92,6 +96,7 @@ homeimgcontainer.addEventListener('click', function(e) {
 });
 
 nextBtn.addEventListener('click', function(e) {
+	console.log(100);
 	e.preventDefault();
 
 	//var img = document.querySelector('img');
