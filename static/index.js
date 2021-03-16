@@ -21,12 +21,20 @@ var background = [
 ];
 
 var dotarray = [ 0, 1, 2 ];
-
+var link = [ '/index?q=Modern Times', '/index?q=Modern Times Epilogue', '/index?q=스무살의 재수학원' ];
 var index = 0;
+
+var starta = document.createElement('a');
+starta.href = link[0];
 var img_ = document.createElement('img');
 img_.src = albumimage[index];
 img_.style.width = '300px';
 img_.style.height = '300px';
+
+img_.addEventListener('click', function(e) {
+	location.href = link[index];
+});
+
 body.style.background = background[0];
 for (var i = 0; i < dotarray.length; i++) {
 	dotarray[i] = document.createElement('div');
@@ -34,7 +42,8 @@ for (var i = 0; i < dotarray.length; i++) {
 	dotbox.appendChild(dotarray[i]);
 }
 
-homeimgcontainer.appendChild(img_);
+starta.appendChild(img_);
+homeimgcontainer.appendChild(starta);
 
 function changebackground() {
 	body.style.background = background[index];
@@ -59,7 +68,17 @@ function sliding(n) {
 	img.style.width = '300px';
 	img.style.height = '300px';
 	img.classList.add('fade');
-	homeimgcontainer.appendChild(img);
+	img.href = link[index];
+	img.addEventListener('click', function(e) {
+		location.href = link[index];
+	});
+	//
+	var a = document.createElement('a');
+	a.href = link[index];
+	a.appendChild(img);
+	homeimgcontainer.appendChild(a);
+	//
+	//homeimgcontainer.appendChild(img);
 	changebackground();
 	colordot(previndex, index);
 	header.style.background =
@@ -68,20 +87,30 @@ function sliding(n) {
 
 homeimgcontainer.addEventListener('click', function(e) {
 	e.preventDefault();
-	homeimgcontainer.removeChild(e.target);
-	sliding(1);
+	//homeimgcontainer.removeChild(e.target);
+	//sliding(1);
 });
 
 nextBtn.addEventListener('click', function(e) {
 	e.preventDefault();
-	var img = document.querySelector('img');
-	img.parentNode.removeChild(img);
+
+	//var img = document.querySelector('img');
+	//img.parentNode.removeChild(img);
+
+	var a = document.querySelector('a');
+	a.parentNode.removeChild(a);
+
 	sliding(1);
 });
 
 prevBtn.addEventListener('click', function(e) {
 	e.preventDefault();
-	var img = document.querySelector('img');
-	img.parentNode.removeChild(img);
+
+	//var img = document.querySelector('img');
+	//img.parentNode.removeChild(img);
+
+	var a = document.querySelector('a');
+	a.parentNode.removeChild(a);
+
 	sliding(-1);
 });

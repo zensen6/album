@@ -7,14 +7,14 @@
     <div class="imgcontainer">
         <div><img class="imgalbum" src="media/{{album_image}}" style="width:300px; height:300px;"></div>
         <div>
-            <audio id="song{{song.id}}" class="song" data-song="{{song.id}}">
-                <source src="media/{{song.song_src}}" type="audio/mpeg"></source>
+            <audio id="song{{songs.0.id}}" class="song" data-song="{{songs.0.id}}">
+                <source src="media/{{songs.0.song_src}}" type="audio/mpeg"></source>
             </audio>
-            <div class="songtitle"><h6 style="font-family:fantasy ">{{song.title}}</h6></div>
-            <div class="albumtitle"><h5 style="font-family:monospace">Album: {{song.album}}</h5></div>
+            <div class="songtitle"><h6 style="font-family:fantasy ">{{songs.0.title}}</h6></div>
+            <div class="albumtitle"><h5 style="font-family:monospace">Album: {{songs.0.album}}</h5></div>
             <div>
-                <audio id="song{{song.id}}" class="song" preload="none" controls>
-                    <source src="/media/{{song.song_src}}" type="audio/mpeg"></source>
+                <audio id="song{{songs.0.id}}" class="song" preload="none" controls>
+                    <source src="/media/{{songs.0.song_src}}" type="audio/mpeg"></source>
                     Your browser does not support the audio!
                 </audio>
             </div>
