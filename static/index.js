@@ -5,6 +5,8 @@ const prevBtn = document.querySelector('.prevBtn');
 const nextBtn = document.querySelector('.nextBtn');
 const header = document.querySelector('.header');
 
+console.log(12);
+
 var albumname = [ 'Modern Times Epilogue', 'Modern Times', '스무살의 재수학원' ];
 var albumimage = [
 	'media/albums/스크린샷_2021-03-16_오전_1.07.08.png',
@@ -13,9 +15,9 @@ var albumimage = [
 ];
 
 var background = [
-	'linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)',
-	'linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,232,253,1) 50%, rgba(69,148,252,1) 100%)',
-	'linear-gradient(90deg, rgba(63,180,58,1) 0%, rgba(253,252,29,1) 50%, rgba(252,187,69,1) 100%)'
+	'linear-gradient(150deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 20%, rgba(199,199,199,1) 51%, rgba(157,196,255,1) 68%, rgba(217,183,255,1) 80%, rgba(214,151,255,1) 95%, rgba(255,255,255,1) 100%)',
+	'linear-gradient(150deg, rgba(255,255,255,1) 0%, rgba(242,223,193,1) 51%, rgba(255,209,139,1) 68%, rgba(244,153,19,1) 80%, rgba(250,158,21,1) 95%, rgba(236,184,107,1) 100%)',
+	'linear-gradient(150deg, rgba(254,255,136,1) 0%, rgba(255,255,255,1) 20%, rgba(196,251,114,1) 51%, rgba(74,255,186,1) 68%, rgba(67,255,132,1) 80%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%)'
 ];
 
 var dotarray = [ 0, 1, 2 ];
@@ -25,9 +27,7 @@ var img_ = document.createElement('img');
 img_.src = albumimage[index];
 img_.style.width = '300px';
 img_.style.height = '300px';
-console.log(img_);
-console.log(homeimgcontainer.childNodes.length);
-
+body.style.background = background[0];
 for (var i = 0; i < dotarray.length; i++) {
 	dotarray[i] = document.createElement('div');
 	dotarray[i].classList.add('dot');
@@ -41,9 +41,11 @@ function changebackground() {
 }
 
 function colordot(previndex, index) {
-	console.log(dotbox.children);
-	dotbox.children[previndex].backgroundColor = 'white';
-	dotbox.children[index].backgroundColor = 'gray';
+	const dots = document.querySelectorAll('.dot');
+	console.log(dots[previndex]);
+	dots[previndex].style.backgroundColor = 'white';
+	console.log('ASda' + dots[previndex]);
+	dots[index].style.backgroundColor = 'gainsboro';
 }
 
 header.style.background =
