@@ -86,8 +86,8 @@ function sliding(n) {
 	index = (index + n < 0 ? albumimage.length - 1 : index + n) % albumimage.length;
 	var img = document.createElement('img');
 	img.src = albumimage[index];
-	img.style.width = '250px';
-	img.style.height = '250px';
+	img.style.width = '300px';
+	img.style.height = '300px';
 	img.classList.add('fade');
 	img.href = link[index];
 	img.addEventListener('click', function(e) {
