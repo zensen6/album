@@ -5,21 +5,31 @@ const prevBtn = document.querySelector('.prevBtn');
 const nextBtn = document.querySelector('.nextBtn');
 //const header = document.querySelector('.header');
 console.log(123123);
-var albumname = [ 'Modern Times Epilogue', 'Modern Times', '스무살의 재수학원' ];
+var albumname = [ 'Modern Times Epilogue', 'Modern Times', '스무살의 봄', 'eight', 'bbibbi' ];
 var albumimage = [
 	'media/albums/스크린샷_2021-03-16_오전_1.07.08.png',
 	'media/albums/스크린샷_2021-03-16_오전_1.06.51.png',
-	'media/albums/스크린샷_2021-03-16_오전_1.06.04.png'
+	'media/albums/스크린샷_2021-03-16_오전_1.06.04.png',
+	'media/albums/5.jpeg',
+	'media/albums/4.png'
 ];
 
 var background = [
 	'linear-gradient(150deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 20%, rgba(199,199,199,1) 51%, rgba(157,196,255,1) 68%, rgba(217,183,255,1) 80%, rgba(214,151,255,1) 95%, rgba(255,255,255,1) 100%)',
 	'linear-gradient(150deg, rgba(255,255,255,1) 0%, rgba(242,223,193,1) 51%, rgba(255,209,139,1) 68%, rgba(244,153,19,1) 80%, rgba(250,158,21,1) 95%, rgba(236,184,107,1) 100%)',
-	'linear-gradient(150deg, rgba(254,255,136,1) 0%, rgba(255,255,255,1) 20%, rgba(196,251,114,1) 51%, rgba(74,255,186,1) 68%, rgba(67,255,132,1) 80%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%)'
+	'linear-gradient(150deg, rgba(254,255,136,1) 0%, rgba(255,255,255,1) 20%, rgba(196,251,114,1) 51%, rgba(74,255,186,1) 68%, rgba(67,255,132,1) 80%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%)',
+	'linear-gradient(150deg, rgba(255,186,61,1) 0%, rgba(255,224,53,1) 20%, rgba(255,247,136,1) 51%, rgba(170,212,255,1) 68%, rgba(56,182,255,1) 80%, rgba(12,174,255,1) 95%, rgba(46,220,255,1) 100%)',
+	'linear-gradient(150deg, rgba(255,137,61,1) 0%, rgba(255,200,53,1) 13%, rgba(248,233,79,1) 24%, rgba(199,136,255,1) 51%, rgba(255,170,240,1) 68%, rgba(255,56,222,1) 80%, rgba(255,12,186,1) 95%, rgba(181,46,255,1) 100%)'
 ];
 
-var dotarray = [ 0, 1, 2 ];
-var link = [ '/index?q=Modern Times', '/index?q=Modern Times Epilogue', '/index?q=스무살의 재수학원' ];
+var dotarray = [ 0, 1, 2, 3, 4 ];
+var link = [
+	'/index?q=Modern Times',
+	'/index?q=Modern Times Epilogue',
+	'/index?q=스무살의 봄',
+	'/index?q=bbibbi',
+	'/index?q=eight'
+];
 var index = 0;
 var click = false;
 var starta = document.createElement('a');
