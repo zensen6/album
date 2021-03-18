@@ -50,13 +50,13 @@
     
     .container, .homecontainer{
         width:100%;
-        height:700px;
+        height:680px;
         display:flex;
         justify-content:center;
         align-items:center;
     }
+
     .homecontainer{
-        
         flex-direction: column;
         justify-content: flex-start;
     }
@@ -67,6 +67,33 @@
         justify-content:center;
         align-items:center;
         flex-direction:column;
+    }
+    .imgcontainer{
+        height:100%;
+        justify-content:flex-start;
+    }
+    .homeimgcontainer{
+        position: relative;
+    }
+
+    @keyframes rolling {
+        0%{
+            left: 650px;
+        }
+        60%{
+            left: 800px;
+        }
+        to{
+            left: 780px;
+        }
+    }
+
+    .diskcontainer{
+        position: absolute;
+        top: 76px;
+        z-index: -1;
+        animation: rolling 1.5s forwards;
+        animation-iteration-count: 1;
     }
 
     .footer{
@@ -144,6 +171,21 @@
         animation-iteration-count: 1;
         animation: fade_ 1.5s normal forwards;
     }
+
+    @keyframes hovermoving {
+        from{}
+        to{
+            left: 850px;
+        }
+    }
+
+    
+    .fade:hover ~ .diskcontainer{
+        animation: hovermoving 1s normal forwards;
+    }
+    
+    
+    
     @-webkit-keyframes fade_ {
         from {opacity: .1} 
         to {opacity: 1}
@@ -227,6 +269,16 @@
         from { transform: rotate(0deg); }
         from { transform: rotate(360deg); }
     }
+    .buttom{
+        height:100px;
+        padding:0px;
+        display:flex;
+        
+    }
+    .bottombox{
+        height:200px;
+    }
+   
     
 
 </style>
@@ -235,7 +287,7 @@
                 <div class='wave'></div>
               <div class='wave -two'></div>
               <div class='wave -three'></div>
-              <div class='title'>IU Album Collection<div>
+              <div class='title' style="font-size: 15px;">IU Album Collection<div>
             </div>
     <!--
     <div class="header" id="headercolor">

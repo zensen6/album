@@ -4,9 +4,7 @@ const dotbox = document.querySelector('.dotbox');
 const prevBtn = document.querySelector('.prevBtn');
 const nextBtn = document.querySelector('.nextBtn');
 //const header = document.querySelector('.header');
-
-console.log(12);
-
+console.log(123123);
 var albumname = [ 'Modern Times Epilogue', 'Modern Times', '스무살의 재수학원' ];
 var albumimage = [
 	'media/albums/스크린샷_2021-03-16_오전_1.07.08.png',
@@ -23,7 +21,7 @@ var background = [
 var dotarray = [ 0, 1, 2 ];
 var link = [ '/index?q=Modern Times', '/index?q=Modern Times Epilogue', '/index?q=스무살의 재수학원' ];
 var index = 0;
-
+var click = false;
 var starta = document.createElement('a');
 starta.href = link[0];
 var img_ = document.createElement('img');
@@ -45,30 +43,51 @@ for (var i = 0; i < dotarray.length; i++) {
 starta.appendChild(img_);
 homeimgcontainer.appendChild(starta);
 
+//
+
+function makedisk() {
+	var timer = setTimeout(function() {
+		var disk = document.createElement('div');
+		var diskimg = document.createElement('img');
+		diskimg.src = '/media/pictures/disk.png';
+		diskimg.style.width = '250px';
+		diskimg.style.height = '250px';
+		diskimg.style.borderRadius = '50%';
+		diskimg.classList.add('diskcontainer');
+		disk.appendChild(diskimg);
+		homeimgcontainer.appendChild(disk);
+		diskExist = true;
+	}, 1200);
+	return timer;
+}
+prevBtn.disabled = true;
+nextBtn.disabled = true;
+setTimeout(function() {
+	prevBtn.disabled = false;
+	nextBtn.disabled = false;
+}, 2500);
+var timer;
+timer = makedisk();
+
+//
 function changebackground() {
 	body.style.background = background[index];
 }
 
 function colordot(previndex, index) {
 	const dots = document.querySelectorAll('.dot');
-	console.log(dots[previndex]);
 	dots[previndex].style.backgroundColor = 'white';
-	console.log('ASda' + dots[previndex]);
 	dots[index].style.backgroundColor = 'gainsboro';
 }
 
-/*
-header.style.background =
-	'linear-gradient(0deg, rgba(149,149,149,1) 3%, rgba(153,153,153,1) 3%, rgba(255,255,255,1) 100%, rgba(0,0,0,0) 100%)';
-
-	*/
 function sliding(n) {
+	timer = makedisk();
 	var previndex = index;
 	index = (index + n < 0 ? albumimage.length - 1 : index + n) % albumimage.length;
 	var img = document.createElement('img');
 	img.src = albumimage[index];
-	img.style.width = '300px';
-	img.style.height = '300px';
+	img.style.width = '250px';
+	img.style.height = '250px';
 	img.classList.add('fade');
 	img.href = link[index];
 	img.addEventListener('click', function(e) {
@@ -79,14 +98,9 @@ function sliding(n) {
 	a.href = link[index];
 	a.appendChild(img);
 	homeimgcontainer.appendChild(a);
-	//
-	//homeimgcontainer.appendChild(img);
+
 	changebackground();
 	colordot(previndex, index);
-	/*
-	header.style.background =
-		'linear-gradient(0deg, rgba(149,149,149,1) 3%, rgba(153,153,153,1) 3%, rgba(255,255,255,1) 100%, rgba(0,0,0,0) 100%)';
-	*/
 }
 
 homeimgcontainer.addEventListener('click', function(e) {
@@ -96,26 +110,33 @@ homeimgcontainer.addEventListener('click', function(e) {
 });
 
 nextBtn.addEventListener('click', function(e) {
-	console.log(100);
 	e.preventDefault();
-
-	//var img = document.querySelector('img');
-	//img.parentNode.removeChild(img);
-
 	var a = document.querySelector('a');
 	a.parentNode.removeChild(a);
+
+	var diskcontainer = document.querySelector('.diskcontainer');
+	diskcontainer.parentNode.removeChild(diskcontainer);
 
 	sliding(1);
 });
 
 prevBtn.addEventListener('click', function(e) {
 	e.preventDefault();
-
-	//var img = document.querySelector('img');
-	//img.parentNode.removeChild(img);
-
 	var a = document.querySelector('a');
 	a.parentNode.removeChild(a);
 
+	var diskcontainer = document.querySelector('.diskcontainer');
+	diskcontainer.parentNode.removeChild(diskcontainer);
+
 	sliding(-1);
 });
+
+function Btnclick() {
+	console.log(11111);
+	prevBtn.disabled = true;
+	nextBtn.disabled = true;
+	setTimeout(function() {
+		prevBtn.disabled = false;
+		nextBtn.disabled = false;
+	}, 2500);
+}
