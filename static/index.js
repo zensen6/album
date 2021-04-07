@@ -7,9 +7,9 @@ const nextBtn = document.querySelector('.nextBtn');
 console.log(123123);
 var albumname = [ 'Modern Times Epilogue', 'Modern Times', '스무살의 봄', 'eight', 'bbibbi' ];
 var albumimage = [
-	'media/albums/스크린샷_2021-03-16_오전_1.07.08.png',
-	'media/albums/스크린샷_2021-03-16_오전_1.06.51.png',
-	'media/albums/스크린샷_2021-03-16_오전_1.06.04.png',
+	'media/albums/1.png',
+	'media/albums/2.png',
+	'media/albums/3.png',
 	'media/albums/5.jpeg',
 	'media/albums/4.png'
 ];
