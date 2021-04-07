@@ -36,8 +36,8 @@ var starta = document.createElement('a');
 starta.href = link[0];
 var img_ = document.createElement('img');
 img_.src = albumimage[index];
-img_.style.width = '300px';
-img_.style.height = '300px';
+img_.style.width = '200px';
+img_.style.height = '200px';
 
 img_.addEventListener('click', function(e) {
 	location.href = link[index];
@@ -70,14 +70,15 @@ function makedisk() {
 	}, 1200);
 	return timer;
 }
+
 prevBtn.disabled = true;
 nextBtn.disabled = true;
 setTimeout(function() {
 	prevBtn.disabled = false;
 	nextBtn.disabled = false;
 }, 2500);
-var timer;
-timer = makedisk();
+//var timer;
+//timer = makedisk();
 
 //
 function changebackground() {
@@ -91,13 +92,13 @@ function colordot(previndex, index) {
 }
 
 function sliding(n) {
-	timer = makedisk();
+	//timer = makedisk();
 	var previndex = index;
 	index = (index + n < 0 ? albumimage.length - 1 : index + n) % albumimage.length;
 	var img = document.createElement('img');
 	img.src = albumimage[index];
-	img.style.width = '300px';
-	img.style.height = '300px';
+	img.style.width = '200px';
+	img.style.height = '200px';
 	img.classList.add('fade');
 	img.href = link[index];
 	img.addEventListener('click', function(e) {
@@ -124,8 +125,8 @@ nextBtn.addEventListener('click', function(e) {
 	var a = document.querySelector('a');
 	a.parentNode.removeChild(a);
 
-	var diskcontainer = document.querySelector('.diskcontainer');
-	diskcontainer.parentNode.removeChild(diskcontainer);
+	//var diskcontainer = document.querySelector('.diskcontainer');
+	//diskcontainer.parentNode.removeChild(diskcontainer);
 
 	sliding(1);
 });
@@ -135,14 +136,14 @@ prevBtn.addEventListener('click', function(e) {
 	var a = document.querySelector('a');
 	a.parentNode.removeChild(a);
 
-	var diskcontainer = document.querySelector('.diskcontainer');
-	diskcontainer.parentNode.removeChild(diskcontainer);
+	//var diskcontainer = document.querySelector('.diskcontainer');
+	//diskcontainer.parentNode.removeChild(diskcontainer);
 
 	sliding(-1);
 });
 
+/*
 function Btnclick() {
-	console.log(11111);
 	prevBtn.disabled = true;
 	nextBtn.disabled = true;
 	setTimeout(function() {
@@ -150,3 +151,4 @@ function Btnclick() {
 		nextBtn.disabled = false;
 	}, 2500);
 }
+*/
